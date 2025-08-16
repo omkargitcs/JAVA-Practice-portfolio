@@ -1,0 +1,21 @@
+interface Sanitation_Mapper{
+	void collectData(String area);
+	void generateReport();
+}
+
+class sanitationMapper_interface implements Sanitation_Mapper{
+	private String lastarea = "";
+	
+	public void collectData(String area){
+		lastarea= area;
+		System.out.println("DATA_COLLECTED FOR : "+area);
+	}
+	public void generateReport(){
+		System.out.println("saitation report generated for :" + lastarea);
+	}
+	public static void main(String[]args){
+		sanitationMapper_interface survey = new sanitationMapper_interface();
+		survey.collectData("borivali west");
+		survey.generateReport();
+	}
+}

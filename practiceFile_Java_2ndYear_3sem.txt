@@ -1,0 +1,213 @@
+public class Sumnatural{
+    public static void main(String[] args){
+        int num = 100 ,sum =0;
+        for(int i=0;i<=num;++i){
+            sum+=i;
+        }
+        System.out.println("sum = "+sum);
+    }
+}
+_________________________________________________
+
+public class Factorial{
+    public static void main(String[] args){
+        int num=5,i=1;
+        long factorial=1;
+        while(i<=num){
+            factorial*=i;
+            i++;
+        }
+        System.out.printf("Factorial of %d = %d",num,factorial);
+    }
+}
+
+__________________________________________________
+
+class main{
+    public static void main(String[] args){
+        int n=10,firstTerm=0,secondTerm = 1;
+        System.out.printf("fibo series is till"+n+"terms:");
+        
+        for(int i=1;i<=n;i++){
+            System.out.printf(firstTerm+" ,");
+            
+            int nextTerm = firstTerm+secondTerm;
+            firstTerm=secondTerm;
+            secondTerm=nextTerm;
+        }
+    }
+}
+___________________________________________________
+public class Main{
+    public static void main (String [] args){
+        int n1=81,n2=153;
+        int gcd =1;
+        for(int i=1;i<=n1 && i<=n2;++i){
+            if(n1%i ==0 && n2%i  ==0)
+                gcd = i;
+            
+        }
+        System.out.println("GCD OF "+n1 + n2 +"is" + " "+ gcd);
+    }
+}
+___________________________________________________
+import java.util.Scanner;
+public class Main{
+    public static void main(String [] args){
+        int n1=72,n2=120;
+        int gcd = findGCD(n1,n2);
+        int lcm = (n1*n2)/gcd;
+        System.out.println("THE LCM OF "+ n1 +""+n2 +"is "+lcm);
+    }
+    public static int findGCD(int a,int b){
+        if(b==0)
+            return a ;
+        return findGCD(b,a%b);
+    
+    }
+}
+_____________________________________________________
+
+public class Main{
+    public static void main(String []args){
+        int count =0;
+        int num = 1234567890;
+        while(num!=0){
+            //num /=10
+            num/=10;
+            ++count;
+        }
+        System.out.println("Number of digits : "+count);
+    }
+}
+_______________________________________________________
+class Main{
+    public static void main(String[]args){
+        int num=56789,reversed=0;
+        System.out.println(num);
+        while(num!=0){
+            int digit = num %10 ;
+            reversed=reversed * 10 + digit;
+            num /=10;
+        }
+        System.out.println(reversed);
+    }
+}
+_____________________________________________________
+class Main{
+    public static void main(String []args){
+        int a=3,b=6;
+        long result =1;
+        while(b!=0){
+            result*=a;
+            --b;
+        }
+        System.out.println(result);
+    }
+}
+_____________________________________________________
+class Main{
+    public static void main(String []args){
+        String str = "MOM",reversestr="";
+        int strlength = str.length();
+        for(int i = (strlength-1);i>=0;i--){
+            reversestr = reversestr+str.charAt(i);
+        }
+        if(str.toLowerCase().equals(reversestr.toLowerCase())){
+            System.out.println(str + " is  a palindrome");
+        }else{
+            System.out.println(str + " is not a palindrome");
+        }
+    }
+}
+________________________________________________
+class Student{
+    String name = " omkar";
+    int age = 78;
+    void displayInfo(){
+        System.out.println("Name : "+name);
+        System.out.println("age : "+age);
+    
+    }
+    public static void main(String [] agrs){
+        Student s1 = new Student ();
+        s1.displayInfo();
+    }
+}
+______________________________________________________
+class car{
+    String brand;
+    int year;
+    car(String b ,int y){
+        brand = b;
+        year=y;
+    }
+    void display(){
+        System.out.println("brand " + brand + " year "+year);
+    }
+    public static void main(String[]args){
+        car c1 = new car("Honda",2020);
+        c1.display();
+    }
+}
+_____________________________________________________
+class Book{
+    String title;
+    int price;
+    void insert(String t,int p){
+        title=t;
+        price=p;
+    }
+    void show(){
+        System.out.println(title + " - $"+price);
+    }
+    
+    public static void main(String [] args){
+        Book b1=new Book();
+        Book b2=new Book();
+        b1.insert("java basic",345);
+        b2.insert("let us java",897);
+        b1.show();
+        b2.show();
+    }
+}
+________________________________________________________
+class Employee{
+    String name;
+    Employee(String name){
+        this.name=name;
+    }
+    void  print(){
+        System.out.println("Employee Name : "+name);
+    }
+    public static void main(String[]args){
+        Employee e=new Employee("RAHUL");
+        e.print();
+    }
+}
+_______________________________________________________
+class Box{
+    int length,width;
+    Box(int l,int w){
+        length = l;
+        width = w;
+    }
+    Box biggerBox(Box b){
+        if(b.length*b.width>length*width){
+            return b;
+        }else{
+            return this;
+        }
+        
+    }
+    void show (){
+        System.out.println("AREA : "+ (length*width));
+    }
+    public static void main(String []args){
+        Box b1 = new Box(4,5);
+        Box b2 = new Box(5,8);
+        Box bigger=b1.biggerBox(b2);
+        bigger.show();
+    }
+}
+
